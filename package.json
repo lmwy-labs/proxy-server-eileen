@@ -1,0 +1,27 @@
+{
+  "name": "proxy-server-eileen",
+  "version": "1.0.0",
+  "description": "proxy for reservation component",
+  "main": "./server/index.js",
+  "scripts": {
+    "test": "test",
+    "start": "nodemon server/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lmwy-labs/proxy-server-eileen.git"
+  },
+  "author": "eileen li",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lmwy-labs/proxy-server-eileen/issues"
+  },
+  "homepage": "https://github.com/lmwy-labs/proxy-server-eileen#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "nodemon": "^1.19.2",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0"
+  }
+}
