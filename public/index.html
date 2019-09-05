@@ -7,12 +7,18 @@
     <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
 </head>
 <body>
-    <div id="app"></div>
-    <script src="http://localhost:3003/restaurants/r1/bundle.js"></script>
+    <div id="gallery"></div>
+    <div id="reservation"></div>
+    <script src="http://localhost:3002/restaurants/:rid/main.js"></script>
+    <script src="http://localhost:3003/restaurants/:rid/bundle.js"></script>
     <script>
         ReactDOM.render(
+            React.createElement(Gallery), 
+            document.getElementById("gallery")
+        );
+        ReactDOM.render(
             React.createElement(Reservation), 
-            document.getElementById("app")
+            document.getElementById("reservation")
         );
     </script>
 </body>
