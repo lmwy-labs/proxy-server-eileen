@@ -2,23 +2,47 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <title>FEC Reservation</title>
+    <title>FEC</title>
+    <style type="text/css" media="screen, print">
+        @font-face {
+          font-family: "Brandon";
+          src: url("./fonts/BrandonText-Regular.otf")
+        }
+    </style>
     <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
     <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/styled-components/dist/styled-components.min.js"></script>
 </head>
 <body>
-    <div id="gallery"></div>
-    <div id="reservation"></div>
-    <script src="http://localhost:3002/restaurants/:rid/main.js"></script>
+    <!-- <div id="overview" style="z-index:99; display:flex; padding-left:8%; padding-top:15px; padding-bottom:15px; width:100%; position:fixed; background-color: white;">
+        <div style=""><a href="#overview">Overview</a></div>
+        <div style="margin-left:10px"><a href="#gallery">Photos</a></div>
+        <div style="margin-left:10px"><a href="#review">Reviews</a></div>
+    </div> -->
+    <h1 style="font-family:Brandon, sans-serif; margin-left:8%; padding-top:50px;">Openplace</h1>
+    <div style="display:flex; width:80%;">
+        <div style="display:block; margin-left:10%;">
+            <div id="gallery" style="margin-bottom:50px;"></div>
+            <h1 style="font-family:Brandon">Reviews</h1>
+            <div id="review" style="margin-left:-220px;"></div>
+        </div>
+        <div id="reservation" style="margin-left:700px; position:fixed;"></div>
+    </div>
     <script src="http://localhost:3003/restaurants/:rid/bundle.js"></script>
+    <script src="http://localhost:3002/restaurants/:rid/main.js"></script>
+    <script src="http://localhost:3001/restaurants/:rid/bundle.js"></script>
     <script>
+        ReactDOM.render(
+            React.createElement(Reservation), 
+            document.getElementById("reservation")
+        );
         ReactDOM.render(
             React.createElement(Gallery), 
             document.getElementById("gallery")
         );
         ReactDOM.render(
-            React.createElement(Reservation), 
-            document.getElementById("reservation")
+            React.createElement(Review), 
+            document.getElementById("review")
         );
     </script>
 </body>
